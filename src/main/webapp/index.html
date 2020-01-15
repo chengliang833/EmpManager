@@ -1,0 +1,120 @@
+﻿<html>
+	<head>
+		<meta content="text/html; charset=utf-8">
+		<title>管理页面</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link href="css/style.css" rel="stylesheet" media="screen" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/const.js"></script>
+		<script type="text/javascript" src="js/cookie_util.js"></script>
+		<script type="text/javascript" src="js/index_emp.js"></script>
+		<script type="text/javascript" src="js/index_wage.js"></script>
+		<script type="text/javascript" src="js/index_dept.js"></script>
+		<script type="text/javascript" src="js/index_pwd.js"></script>
+		<script type="text/javascript" src="js/special.js"></script>
+	</head>
+	
+	<body>
+		<div ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+			<div class="left">
+				<div class="div1" id="div1">
+					<div class="left_top">
+						<div id="img1">员</div>
+						<div id="img2">工</div>
+						<div id="img3">管</div>
+						<div id="img4">理</div>
+					</div>
+						
+					<div class="div2">
+						<div class="emp"></div>员工管理
+					</div>
+						<div class="div3">
+							<ul>
+								<li id="emp_select">查询员工</li>
+				        		<li id="emp_update">修改信息</li>
+								<li id="emp_insert">添加员工</li>
+								<li id="emp_delete">删除员工</li>
+				        	</ul>
+				  		</div>
+				  		
+			    	<div class="div2">
+						<div class="wage"></div>薪资管理
+					</div>
+				      	<div class="div3">
+			      			<ul>
+								<li id="wage_select">查询薪资</li>
+								<li id="wage_update">修改薪资</li>
+			         		</ul>
+				  		</div>
+					
+					<div class="div2">
+						<div class="dept"></div>部门管理
+					</div>
+				      	<div class="div3">
+			      			<ul>
+								<li id="dept_select">查询部门</li>
+								<li id="dept_update">修改部门</li>
+								<li id="dept_insert">添加部门</li>
+								<li id="dept_delete">删除部门</li>
+			         		</ul>
+				  		</div>
+								  	
+				  	<div class="div2">
+						<div class="basic"></div>总体概览
+					</div>
+				      	<div class="div3">
+							<ul>
+								<li id="browse_emp">员工概览</li>
+								<li id="browse_wage">薪资概览</li>
+				        		<li id="browse_dept">部门概览</li>
+							</ul>
+						</div>
+				  	
+			  		<div class="div2">
+						<div class="account"></div>修改密码
+					</div>
+				      	<div class="div3">
+			      			<ul>
+								<li id="pwd_emp">员工密码</li>
+								<li id="pwd_admin">管理密码</li>
+			         		</ul>
+				  		</div>
+				  	
+				  	<div class="div2" id="exit">
+						<div class="exit"></div>退&emsp;出
+					</div>
+				  	
+				</div>
+			</div>
+			
+			<div class="right">
+				<div id="showview">
+					欢&emsp;迎&emsp;使&emsp;用&emsp;员&emsp;工&emsp;薪&emsp;资&emsp;管&emsp;理&emsp;系&emsp;统
+
+				</div>
+				<div class="foot">
+					<p id="warning" class="warning"></p>
+					<p>-------- 员&emsp;工&emsp;薪&emsp;资&emsp;管&emsp;理&emsp;系&emsp;统 --------</p>
+				</div>
+			</div>
+					
+			<div id="hovertreecontainer">
+				<div>
+					<h1 id="h1"></h1>
+					<h2 id="h2"></h2>
+					<h3 id="h2"><a href=""></a> <a href=""></a></h3>
+					<p>&nbsp;</p>
+					<p><strong><a href=""></a></strong></p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+	
+			<canvas id="canvas"></canvas>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.ulane.emp.dao.WageDao">
+	
+	<select id="findWageById" parameterType="integer" resultType="cn.ulane.emp.entity.Wage">
+		SELECT id,name,wage,wagetype,basewage,bonus,deductwage,grantdate
+		FROM view_empwage w
+		WHERE id=#{id}
+	</select>
+	
+	<update id="updateWageById" parameterType="cn.ulane.emp.entity.Wage">
+		UPDATE view_empwage
+		SET basewage = #{basewage},
+			bonus = #{bonus},
+			deductwage = #{deductwage},
+			grantdate = #{grantdate}
+		WHERE id=#{id}
+	</update>
+	
+	<insert id="insertWage" parameterType="integer">
+		INSERT INTO empwage(id)
+		VALUES(#{id})
+	</insert>
+	
+	<delete id="deleteWage" parameterType="integer">
+		DELETE
+		FROM empwage
+		WHERE id=#{id}
+	</delete>
+	
+	<update id="updateForeignIdByEmpId" parameterType="map">
+		UPDATE empwage
+		SET id=#{id}
+		WHERE id=#{oldId}
+	</update>
+	
+	<insert id="insertEmp" parameterType="cn.ulane.emp.entity.Emp" useGeneratedKeys="true" keyProperty="id">
+		<!-- <selectKey keyProperty="id" order="AFTER" resultType="int">
+			SELECT LAST_INSERT_ID() as id
+		</selectKey> -->
+		INSERT INTO employees(name, sex, age, post, department)
+		VALUES(#{name}, #{sex}, #{age}, #{post}, (SELECT dtmt_id
+												  FROM department
+												  WHERE dtmt_name=#{department}))
+	</insert>
+	
+	<select id="browseWage" parameterType="map" resultType="map">
+		SELECT id,name,wage,wagetype,basewage,bonus,deductwage,grantdate
+		FROM view_empwage
+		ORDER BY id
+		LIMIT #{start}, #{pageSize};
+	</select>
+	
+	<select id="browseEmpNum" resultType="int">
+		SELECT count(*)
+		FROM view_emp
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+

@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<style>
+			.dt2 ~ dd, .dt1 ~ dd{
+				display:none;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery.js"></script>
+	</head>
+	<body>
+		<h2>系统管理：</h2>
+		
+		<dl>
+		    <dt class="dt1">内容管理</dt>
+		    <dd>
+		        <dl>
+		            <dt class="dt2">文章分类管理</dt>
+		            <dd>文章分类列表</dd>
+		            <dd>文章分类列表</dd>
+		            <dd>文章分类列表</dd>
+		        </dl>
+		        <dl>
+		            <dt class="dt2">文章分类管理</dt>
+		            <dd>文章分类列表</dd>
+		            <dd>文章分类列表</dd>
+		            <dd>文章分类列表</dd>
+		        </dl>
+		    </dd>
+		    <dt class="dt1">内容管理2</dt>
+		    <dd>
+		       <dl>
+		           <dt class="dt2">文章分类管理2</dt>
+		           <dd>文章分类列表2</dd>
+		           <dd>文章分类列表2</dd>
+		           <dd>文章分类列表2</dd>
+		       </dl>
+		       <dl>
+		           <dt class="dt2">文章分类管理2</dt>
+		           <dd>文章分类列表2</dd>
+		           <dd>文章分类列表2</dd>
+		           <dd>文章分类列表2</dd>
+		       </dl>
+			</dd>
+		    <dt class="dt1">只有一级</dt>
+		    <dd>
+		       <p>
+		          	 一级1
+		       </p>
+		       <p>
+		          	 一级2
+		       </p>
+		       <p>
+		          	 一级3
+		       </p>
+			</dd>
+		</dl>
+		
+		<script>
+			$(".dt1").click(function(){
+				$(this).next("dd").find("dd").slideUp("slow");
+				$(this).next("dd").siblings("dd").find("dd").slideUp("slow");
+				$(this).next("dd").slideToggle("slow").siblings("dd").slideUp("slow");
+			});
+			$(".dt2").click(function(){
+				$(this).parent().siblings("dl").children("dd").slideUp("slow");
+				$(this).parent().children("dd").slideToggle("slow");
+			});
+		</script>
+	</body>
+</html>

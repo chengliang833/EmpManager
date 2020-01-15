@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.ulane.emp.dao.UserDao">
+	<select id="findAdminByUsername" parameterType="string" resultType="cn.ulane.emp.entity.Admin">
+		SELECT username, password
+		FROM view_admin
+		WHERE username=#{username}
+	</select>
+	
+	<select id="findUserById" parameterType="integer" resultType="cn.ulane.emp.entity.User">
+		SELECT id, password
+		FROM view_user
+		WHERE id=#{id}
+	</select>
+		
+	<update id="updatePwdById" parameterType="cn.ulane.emp.entity.User">
+		UPDATE view_user
+		SET password = #{password}
+		WHERE id=#{id}
+	</update>
+	
+	<update id="updatePwdByUsername" parameterType="cn.ulane.emp.entity.Admin">
+		UPDATE view_admin
+		SET password = #{password}
+		WHERE username=#{username}
+	</update>
+	
+	<!-- <select id="findUserById" parameterType="integer" resultType="cn.ulane.emp.entity.User">
+		SELECT id,name,password,sex,age,post,d.dtmt_name as department,wage
+		FROM employees e,department d
+		WHERE id=#{id} AND e.department = d.dtmt_ids
+	</select>
+	
+	<update id="updateUserByOldId" parameterType="cn.ulane.emp.entity.User_OldId">
+		
+	</update> -->
+</mapper>
+
+
+
+
+
+
+

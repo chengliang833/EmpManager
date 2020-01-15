@@ -1,0 +1,106 @@
+*{
+	margin:0;
+	padding:0;
+	font-family:"微软雅黑";
+	font-size:12px;
+}
+.title{
+	text-align:center;
+	margin:3% 0;
+	font-size:60px;
+	position:absolute;
+	width:100%;
+}
+.remark{
+	text-align:center;
+	width:100%;
+	position:absolute;
+	bottom:4%;
+}
+#foot{
+	font-size:15px;
+}
+.box{
+	width:390px;
+	height:320px;
+	border:solid 1px #ddd;
+	background:#FFF;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-195px;
+	margin-top:-160px;
+	opacity:0.9;
+	z-index:9999;
+}
+.box h2{
+	font-weight:normal;
+	color:#666;
+	font-size:16px;
+	line-height:46px;
+	height:46px;
+	overflow:hidden;
+	text-align:center;
+	border-bottom:solid 1px #ddd;
+	background:#f7f7f7;
+}
+.input_box{
+	width:350px;
+	padding-bottom:15px;
+	margin:0 auto;
+	overflow:hidden;
+}
+.input_box input{
+	float:left;
+	width:348px;
+	height:40px;
+	font-size:14px;
+	border:solid 1px #ddd;
+	text-indent:10px;
+	outline:none;
+	line-height:40px;
+}
+.input_box button{
+	width:350px;
+	height:48px;
+	background:#3f89ec;
+	border:none;
+	border-radius:2px;
+	outline:none;
+	cursor:pointer;
+	font-size:16px;
+	color:#FFF;
+}
+#error_box{
+	height:40px;
+	width:350px;
+	margin:0 auto;
+	line-height:40px;
+	color:#fc4343;
+	text-align:center;
+}
+
+#code{
+	width:260px;
+}
+
+#codeImg{
+	width: 80px;
+	height: 30px;
+	margin: 6px 0 6px 7px;
+}
+
+#hovertreecontainer{
+	display:none;
+}
+
+html{
+/* 	background-image: url("../images/6075.jpg");
+	background-repeat: no-repeat;
+    background-size: 1366px 768px; */
+    /* background-color: rgb(247,247,247); */
+}
+#canvas{
+	opacity:0.03;
+	background-color: darkslategrey;
+}

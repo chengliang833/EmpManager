@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.ulane.emp.dao.DepartmentDao">
+	
+	<select id="findDtmtByName" parameterType="string" resultType="cn.ulane.emp.entity.Department">
+		SELECT dtmt_id, dtmt_name
+		FROM view_department
+		WHERE dtmt_name=#{dtmt_name}
+	</select>
+	
+	<select id="findDeptById" parameterType="integer" resultType="cn.ulane.emp.entity.Department">
+		SELECT dtmt_id, dtmt_name, emp_num
+		FROM view_department
+		WHERE dtmt_id=#{dtmt_id}
+	</select>
+	
+	<update id="updateDeptById" parameterType="cn.ulane.emp.entity.Department">
+		UPDATE department
+		SET dtmt_name=#{dtmt_name}
+		WHERE dtmt_id=#{dtmt_id}
+	</update>
+	
+	<insert id="insertDept" parameterType="cn.ulane.emp.entity.Department" useGeneratedKeys="true" keyProperty="dtmt_id">
+		INSERT INTO department(dtmt_name)
+		VALUES(#{dtmt_name})
+	</insert>
+	
+	<delete id="deleteDept" parameterType="int">
+		DELETE
+		FROM department
+		WHERE dtmt_id=#{dtmt_id}
+	</delete>
+
+	<select id="browseDeptNum" resultType="int">
+		SELECT count(*)
+		FROM view_department
+	</select>
+
+	<select id="browseDept" parameterType="map" resultType="map">
+		SELECT dtmt_id,dtmt_name,emp_num
+		FROM view_department
+		ORDER BY dtmt_id
+		LIMIT #{start}, #{pageSize}
+	</select>
+	
+	<select id="selectAllDept" resultType="string">
+		SELECT dtmt_name
+		FROM view_department
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+

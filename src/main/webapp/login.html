@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>登录</title>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/const.js"></script>
+		<script type="text/javascript" src="js/cookie_util.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+		<script type="text/javascript" src="js/special.js"></script>
+	</head>
+	
+	<body>
+		<div ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false">
+			<h1 class="title">员&emsp;工&emsp;薪&emsp;资&emsp;管&emsp;理&emsp;系&emsp;统</h1>
+			<div class="box">
+				<h2>登录</h2>
+		    	<div id="error_box">
+		    	</div>
+		    	<div class="input_box">
+		    		<input type="text" placeholder="请输入账户名" id="username" value=""/>
+		    	</div>
+		    	<div class="input_box">
+		    		<input type="password" placeholder="请输入密码" id="password" value=""/>
+		    	</div>
+		    	<div class="input_box">
+		    		<input type="text" placeholder="请输入验证码" id="code"/>
+		    		<img id="codeImg">
+		    	</div>
+		    	<div class="input_box">
+		    		<button id="login">登录</button>
+		    	</div>
+			</div>
+			<div class="remark" style="z-index:99999">
+				<button id="test" >测试</button>
+				<p id="foot">---- *&emsp;*&emsp;版&emsp;权&emsp;所&emsp;有 ----</p>
+			</div>
+			
+			<div id="hovertreecontainer">
+				<div>
+					<h1 id="h1"></h1>
+					<h2 id="h2"></h2>
+					<h3 id="h2"><a href=""></a> <a href=""></a></h3>
+					<p>&nbsp;</p>
+					<p><strong><a href=""></a></strong></p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+	
+			<canvas id="canvas"></canvas>
+		</div>
+		
+	</body>
+</html>
+
+
+
+
+
+

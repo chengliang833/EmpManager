@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.ulane.emp.dao.EmpDao">
+	
+	<select id="findEmpById" parameterType="integer" resultType="cn.ulane.emp.entity.Emp">
+		SELECT id,name,sex,age,post,d.dtmt_name as department,wage
+		FROM view_emp e, view_department d
+		WHERE id=#{id} AND e.department = d.dtmt_id
+	</select>
+	
+	<update id="updateEmpByOldId" parameterType="cn.ulane.emp.entity.Emp_OldId">
+		UPDATE employees
+		SET id=#{id},
+			name=#{name},
+			sex=#{sex},
+			age=#{age},
+			post=#{post},
+			department=(SELECT dtmt_id
+						FROM department
+						WHERE dtmt_name=#{department})
+		WHERE id=#{oldId}
+	</update>
+	
+	<insert id="insertEmp" parameterType="cn.ulane.emp.entity.Emp" useGeneratedKeys="true" keyProperty="id">
+		<!-- <selectKey keyProperty="id" order="AFTER" resultType="int">
+			SELECT LAST_INSERT_ID() as id
+		</selectKey> -->
+		INSERT INTO employees(name, sex, age, post, department)
+		VALUES(#{name}, #{sex}, #{age}, #{post}, (SELECT dtmt_id
+												  FROM department
+												  WHERE dtmt_name=#{department}))
+	</insert>
+	
+	<select id="browseEmp" parameterType="map" resultType="map">
+		SELECT id,name,sex,age,post,d.dtmt_name as department,wage
+		FROM view_emp e, view_department d
+		WHERE e.department = d.dtmt_id
+		ORDER BY id
+		LIMIT #{start}, #{pageSize};
+	</select>
+	
+	<select id="browseEmpNum" resultType="int">
+		SELECT count(*)
+		FROM view_emp
+	</select>
+	
+	<delete id="deleteEmp" parameterType="int">
+		DELETE
+		FROM employees
+		WHERE id=#{id}
+	</delete>
+
+</mapper>
+
+
+
+
+
+
+
